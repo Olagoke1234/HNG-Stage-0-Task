@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        overflow: hidden;
+      }
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .social-links a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .shortBio {
+        font-size: 14px;
+        color: #6c757d;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="profile.jpeg"
+        alt="Profile Picture"
+        data-testid="profilePicture"
+      />
+      <h2 data-testid="fullName">Olagoke Olorunkosebi</h2>
+      <h4 data-testid="jobTitle">Frontend Developer</h4>
+      <p data-testid="shortBio" class="shortBio">
+        I am a passionate frontend developer who enjoys building interactive and
+        user-friendly web applications. I am currently participating in the HNG
+        Internship to improve my skills.
+      </p>
+      <p data-testid="currentLocation">Ibadan, Nigeria</p>
+      <p data-testid="emailAddress">olagokeolorunkosebi@gmail.com</p>
+      <div class="social-links" data-testid="socialLinks">
+        <a
+          href="https://www.linkedin.com/in/olagoke-olorunkosebi-9ba48571/"
+          target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/Olagoke1234" target="_blank">GitHub</a>
+        <a href="https://x.com/olagoke9871" target="_blank">Twitter</a>
+      </div>
+      <p data-testid="currentTimeUTC" id="utc-time"></p>
+    </div>
+
+    <script>
+      function updateTime() {
+        const utcTimeElement = document.getElementById("utc-time");
+        const now = new Date();
+        utcTimeElement.innerText = `UTC Time: ${now.toUTCString()}`;
+      }
+      updateTime();
+    </script>
+  </body>
+</html>
